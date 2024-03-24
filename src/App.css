@@ -1,0 +1,15 @@
+.image {
+  background-image: url("../../public/images/background.jpg");
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
