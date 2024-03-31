@@ -4,8 +4,8 @@ import styles from "./Cont2.module.css";
 
 const Cont2 = ({ currentData, setCurrentData }) => {
   const api_key = "a8911bc75882ba9beea69f5c549453ac";
-  const handleSearch = async () => {
-
+  const handleSearch = async (e) => {
+    e.preventDefault();
     try {
       let element = document.getElementById("searchBar");
       if (element.value === "") {
@@ -33,7 +33,7 @@ const Cont2 = ({ currentData, setCurrentData }) => {
 
   return (
     <div className={styles.cont2}>
-      <div className={styles.topBar}>
+      <form className={styles.topBar} onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="search city"
@@ -41,9 +41,9 @@ const Cont2 = ({ currentData, setCurrentData }) => {
           className={styles.input}
         />
         <button className={styles.icon} onClick={handleSearch}>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
-      </div>
+      </form>
       <div className={styles.sun}>
         <img
           src="https://cdn0.iconfinder.com/data/icons/weather-web-app-ui-colored/100/weather-20-512.png"
@@ -54,13 +54,13 @@ const Cont2 = ({ currentData, setCurrentData }) => {
       <div className={styles.flat}>
         <div className={styles.flat1}>
           <div className={styles.box}>
-            <i class="fa-solid fa-temperature-quarter"></i>
+            <i className="fa-solid fa-temperature-quarter"></i>
             <span>Temprature</span>
             <div className={styles.season}>{currentData.temp + " °C"}</div>
           </div>
 
           <div className={styles.box}>
-            <i class="fa-solid fa-droplet"></i>
+            <i className="fa-solid fa-droplet"></i>
             <span>Humidity</span>
             <div className={styles.season}>{currentData.humidity + " %"}</div>
           </div>
@@ -68,13 +68,15 @@ const Cont2 = ({ currentData, setCurrentData }) => {
 
         <div className={styles.flat2}>
           <div className={styles.box}>
-            <i class="fa-solid fa-wind"></i>
+            <i className="fa-solid fa-wind"></i>
             <span>Wind Speed</span>
-            <div className={styles.season}>{currentData.windSpeed + " Km/Hr"} </div>
+            <div className={styles.season}>
+              {currentData.windSpeed + " Km/Hr"}{" "}
+            </div>
           </div>
 
           <div className={styles.box}>
-            <i class="fa-solid fa-eye"></i>
+            <i className="fa-solid fa-eye"></i>
             <span>Visibility</span>
             <div className={styles.season}>{currentData.visibility}</div>
           </div>

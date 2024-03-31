@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Cont1.module.css";
 
 const Cont1 = ({ currentData }) => {
   const currentDate = new Date();
   const date = currentDate.toLocaleDateString();
   const day = currentDate.toLocaleDateString("en-US", { weekday: "long" });
-  const time = currentDate.toLocaleTimeString();
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+  }, []);
 
   return (
     <div>
@@ -17,7 +23,7 @@ const Cont1 = ({ currentData }) => {
         <div className={styles.temp}>{currentData.temp + " °C"}</div>
         <div className={styles.city}>{currentData.city}</div>
         <div className={styles.date}>
-          <div>Time: {time}</div>
+          <div>Time: {time.toLocaleTimeString()}</div>
           <div className={styles.day}>
             <div>{`${day} & ${date}`}</div>
           </div>
