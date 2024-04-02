@@ -1,6 +1,5 @@
 # Weather App
-
-![Uploading Screenshot 2024-04-02 at 4.47.41 PM.png…]()
+<img width="1001" alt="Screenshot 2024-04-02 at 4 47 41 PM" src="https://github.com/PiyushPanwarFST/WeatherApp/assets/153702744/5b1fd196-2b89-4225-af36-1d835d17680c">
 
 
 
