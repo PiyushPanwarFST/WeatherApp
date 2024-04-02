@@ -33,5 +33,5 @@ Before running this application locally, make sure you have the following instal
 1. Clone the repository:
 
    ```bash
-   [git clone https://github.com/yourusername/weather-app.git](https://github.com/PiyushPanwarFST/WeatherApp/tree/main)
+   (https://github.com/PiyushPanwarFST/WeatherApp/tree/main)
 
